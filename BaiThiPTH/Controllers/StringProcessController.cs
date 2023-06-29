@@ -7,91 +7,89 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BaiThiPTH.Models;
 
-
 namespace BaiThiPTH.Controllers
 {
-    public class PTHCau3Controller : Controller
+    public class StringProcessController : Controller
     {
         private readonly ApplicationDbContext _context;
-   
 
-        public PTHCau3Controller(ApplicationDbContext context)
+        public StringProcessController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: PTHCau3
+        // GET: StringProcess
         public async Task<IActionResult> Index()
         {
-              return _context.PTHCau3 != null ? 
-                          View(await _context.PTHCau3.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.PTHCau3'  is null.");
+              return _context.StringProcess != null ? 
+                          View(await _context.StringProcess.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.StringProcess'  is null.");
         }
 
-        // GET: PTHCau3/Details/5
+        // GET: StringProcess/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.PTHCau3 == null)
+            if (id == null || _context.StringProcess == null)
             {
                 return NotFound();
             }
 
-            var pTHCau3 = await _context.PTHCau3
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pTHCau3 == null)
+            var stringProcess = await _context.StringProcess
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (stringProcess == null)
             {
                 return NotFound();
             }
 
-            return View(pTHCau3);
+            return View(stringProcess);
         }
 
-        // GET: PTHCau3/Create
+        // GET: StringProcess/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: PTHCau3/Create
+        // POST: StringProcess/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NameSV,Age")] PTHCau3 pTHCau3)
+        public async Task<IActionResult> Create([Bind("ID,Name,Address")] StringProcess stringProcess)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pTHCau3);
+                _context.Add(stringProcess);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(pTHCau3);
+            return View(stringProcess);
         }
 
-        // GET: PTHCau3/Edit/5
+        // GET: StringProcess/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.PTHCau3 == null)
+            if (id == null || _context.StringProcess == null)
             {
                 return NotFound();
             }
 
-            var pTHCau3 = await _context.PTHCau3.FindAsync(id);
-            if (pTHCau3 == null)
+            var stringProcess = await _context.StringProcess.FindAsync(id);
+            if (stringProcess == null)
             {
                 return NotFound();
             }
-            return View(pTHCau3);
+            return View(stringProcess);
         }
 
-        // POST: PTHCau3/Edit/5
+        // POST: StringProcess/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("Id,NameSV,Age")] PTHCau3 pTHCau3)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Address")] StringProcess stringProcess)
         {
-            if (id != pTHCau3.Id)
+            if (id != stringProcess.ID)
             {
                 return NotFound();
             }
@@ -100,12 +98,12 @@ namespace BaiThiPTH.Controllers
             {
                 try
                 {
-                    _context.Update(pTHCau3);
+                    _context.Update(stringProcess);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PTHCau3Exists(pTHCau3.Id))
+                    if (!StringProcessExists(stringProcess.ID))
                     {
                         return NotFound();
                     }
@@ -116,49 +114,49 @@ namespace BaiThiPTH.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(pTHCau3);
+            return View(stringProcess);
         }
 
-        // GET: PTHCau3/Delete/5
+        // GET: StringProcess/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.PTHCau3 == null)
+            if (id == null || _context.StringProcess == null)
             {
                 return NotFound();
             }
 
-            var pTHCau3 = await _context.PTHCau3
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pTHCau3 == null)
+            var stringProcess = await _context.StringProcess
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (stringProcess == null)
             {
                 return NotFound();
             }
 
-            return View(pTHCau3);
+            return View(stringProcess);
         }
 
-        // POST: PTHCau3/Delete/5
+        // POST: StringProcess/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int? id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.PTHCau3 == null)
+            if (_context.StringProcess == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.PTHCau3'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.StringProcess'  is null.");
             }
-            var pTHCau3 = await _context.PTHCau3.FindAsync(id);
-            if (pTHCau3 != null)
+            var stringProcess = await _context.StringProcess.FindAsync(id);
+            if (stringProcess != null)
             {
-                _context.PTHCau3.Remove(pTHCau3);
+                _context.StringProcess.Remove(stringProcess);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PTHCau3Exists(int? id)
+        private bool StringProcessExists(int id)
         {
-          return (_context.PTHCau3?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.StringProcess?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

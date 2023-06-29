@@ -18670,6 +18670,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\StringProcess\\Edit.cshtml",
+      "TargetPath": "Views\\StringProcess\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\PTHCau3\\Details.cshtml",
       "TargetPath": "Views\\PTHCau3\\Details.cshtml",
       "FileKind": "mvc"
@@ -18695,8 +18700,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\StringProcess\\Details.cshtml",
+      "TargetPath": "Views\\StringProcess\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\StringProcess\\Delete.cshtml",
+      "TargetPath": "Views\\StringProcess\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\StringProcess\\Index.cshtml",
+      "TargetPath": "Views\\StringProcess\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\PTHCau3\\Edit.cshtml",
       "TargetPath": "Views\\PTHCau3\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\DELL\\Desktop\\monthi\\BaiThiPTH\\Views\\StringProcess\\Create.cshtml",
+      "TargetPath": "Views\\StringProcess\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

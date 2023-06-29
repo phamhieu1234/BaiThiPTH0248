@@ -13,4 +13,6 @@ using BaiThiPTH.Models;
         }
 
         public DbSet<BaiThiPTH.Models.PTHCau3> PTHCau3 { get; set; } = default!;
+
+        public DbSet<BaiThiPTH.Models.StringProcess> StringProcess { get; set; } = default!;
     }
